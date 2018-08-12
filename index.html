@@ -8,21 +8,40 @@
     <meta name=viewport content="width=1440px, maximum-scale=1.0">
     <meta name=author content="Launchpad by anima">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
 </head>
 
-<body style="margin: 0; background: rgba(255, 255, 255, 1.0);">
+<body style="margin: 0; background: rgba(255, 255, 255, 1.0); overflow-x: hidden">
+    <img style="position: absolute; width: 100%; height: 100%" class=bg src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-bg.png">
+    <div class=topbar style="width: 100%; left: 0">
+        <div style="width: 100%; background-color: #558793;" class=topbar1></div>
+        <img class=texture src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-texture.png">
+        <button style="left: 94.7%; background-size: cover; border: 0; outline: none; background-image: url(https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-avatar@2x.png)"
+            class=avatar>
+        </button>
+        <div style="left: 15%; width: 98px; text-align: center; height: 100%; background-color: white; top: 0" class=activebg></div>
+        <div style="left: 15%; width: 98px; text-align: center" class=projects>Dashboard</div>
+        <div style="left: 23.5%" class=reports>My Data</div>
+        <div style="left: 29%" class=invoices>Manage</div>
+        <div class=logo>
+            <img class=fill1 src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-fill-1%2010@2x.png">
+            <img class=fill2 src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-fill-2%2011@2x.png">
+            <img class=fill3 src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-fill-3%201@2x.png">
+            <div class=kanbio>Worklife</div>
+        </div>
+    </div>
     <input type=hidden id=anPageName name=page value=kanbiotimetracking>
     <div class=kanbiotimetracking>
         <div style="width: 1440px; height: 100%; position:relative; margin:auto; ">
             <div class=shot>
-                <img class=bg src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-bg.png">
                 <div class=table>
                     <div class=tabs>
-                        <img class=rectangle6 src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-rectangle-6@2x.png">
-                        <div class=team>Team</div>
-                        <img class=rectangle61 src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-rectangle-6%201.png">
-                        <div class=rectangle62></div>
-                        <div class=tasks4>Tasks (4)</div>
+                        <img style="width: 242px; left: 20px" class=rectangle6 src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-rectangle-6@2x.png">
+                        <div style="width: 242px; text-align: center; left: 20px" class=team>Mood</div>
+                        <div style="width: 242px; text-align: center; left: 262px" class=team>Waking Time</div>
+                        <img style="width: 242px; left: 262px;" class=rectangle6 src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-rectangle-6@2x.png">
+                        <div style="width: 242px; text-align: center; left: 503px" class=team>Posture</div>
+                        <img style="left: 503px; width: 242px" class=rectangle6 src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-rectangle-6@2x.png">
                     </div>
                     <div class=rectangle></div>
                     <div class=rectangle1></div>
@@ -150,7 +169,7 @@
                         <div class=button></div>
                         <div class=label1>?</div>
                     </div>
-                    <img class=line1 src=" https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-line@2x.png">
+                    <img class=line1 src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-line@2x.png">
                     <div class=a2>
                         <div class=remainingbudget22>Remaining Budget (22%)</div>
                         <div class=a50000>500.00</div>
@@ -170,56 +189,19 @@
                         <div class=nonbillablehours>Non-Billable Hours</div>
                         <div class=a40342>403.42</div>
                     </div>
-                    <div class=chart>
-                        <div class=labels>
-                            <div class=jan20>Jan 20</div>
-                            <div class=feb3>Feb 3</div>
-                            <div class=feb17>Feb 17</div>
-                            <div class=mar1>Mar 1</div>
-                            <div class=mar15>Mar 15</div>
-                            <div class=mar29>Mar 29</div>
-                            <div class=a100>100</div>
-                            <div class=a200>200</div>
-                            <div class=a300>300</div>
-                            <div class=hours>HOURS</div>
-                        </div>
-                        <div class=mask></div>
-                        <img class=verticallines src=" https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-vertical-lines.png">
-                        <div class=horizontallines>
-                            <img class=line4 src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-line%206.png">
-                            <img class=line11 src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-line%206.png">
-                            <img class=line21 src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-line%206.png">
-                            <img class=line3 src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-line%206.png">
-                        </div>
-                        <img class=chart1 src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-chart.png">
-                        <div class=points>
-                            <img class=oval src=" https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-oval%203@2x.png">
-                            <img class="oval copy " src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-oval%203@2x.png">
-                            <img class="oval copy2 " src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-oval%203@2x.png">
-                            <img class="oval copy3 " src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-oval%203@2x.png">
-                            <img class="oval copy4 " src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-oval%203@2x.png">
-                            <img class="oval copy5 " src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-oval%203@2x.png">
-                            <img class="oval copy6 " src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-oval%203@2x.png">
-                            <img class="oval copy7 " src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-oval%203@2x.png">
-                            <img class="oval 1 " src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-oval%203@2x.png">
-                            <img class="oval 2 " src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-oval%203@2x.png">
-                            <img class="oval 3 " src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-oval%203@2x.png">
-                        </div>
-                    </div>
+                    <canvas style="top: 100px; position: absolute;" id="mainChart" width="1250" height="356"></canvas>
                     <div class="tabs ">
                         <div class="rectangle7 "></div>
                         <img class="shadow " src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-shadow@2x.png">
                         <div class=button></div>
                         <img class=icon src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-icon@2x.png">
-                        <img class=icon1 src=" https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-icon%201@2x.png">
+                        <img class=icon1 src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-icon%201@2x.png">
                     </div>
                     <div class=tabs1>
-                        <div class=rectangle7></div>
-                        <img class=shadow src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-shadow%201@2x.png">
-                        <div class=button></div>
+                        <div style="background-color: #558793; border: none" class=button></div>
                         <div class=projectprogress>Project Progress</div>
                         <div class=icon>
-                            <img class=fill2 src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-fill-2%207@2x.png">
+                            <img style="filter: grayscale(1) brightness(255)" class=fill2 src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-fill-2%207@2x.png">
                         </div>
                         <div class=hoursperweek>Hours Per Week</div>
                         <div class=icon1>
@@ -231,12 +213,11 @@
                 </div>
                 <div class=actionsedit>
                     <div class=editbutton>
-                        <img class=shadow src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-shadow%202@2x.png">
-                        <div class=button></div>
+                        <div style="background-color: #558793" class=button></div>
                         <div class=editproject>Edit Project</div>
                         <div class=editicon>
-                            <img class=fill1 src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-fill-1%208@2x.png">
-                            <img class=fill2 src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-fill-2%209@2x.png">
+                            <img style="filter: grayscale(1) brightness(255)" class=fill1 src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-fill-1%208@2x.png">
+                            <img style="filter: grayscale(1) brightness(255)" class=fill2 src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-fill-2%209@2x.png">
                         </div>
                     </div>
                     <div class=actionsbutton>
@@ -249,41 +230,131 @@
                     </div>
                 </div>
                 <div class=searchbar>
-                    <div class=input></div>
+                    <input placeholder="Search" style="width: 478px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 12pt; padding-left: 20px; padding-right: 50px; width: 423px"
+                        class=input></input>
                     <img class=searchicon src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-search-icon@2x.png">
-                    <div class=searchbyclientor>Search by client or project name</div>
                 </div>
                 <div class=projectinfo>
-                    <div class=websiteredesignb>Website redesign &amp; branding creation</div>
+                    <div class=websiteredesignb>Worklife Analytics</div>
                     <div class=a19jan2017>19 Jan 2017</div>
-                    <img class=timeicon src=" https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-time-icon@2x.png">
-                    <div class=uzers>UZERS</div>
+                    <img class=timeicon src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-time-icon@2x.png">
+                    <div style="color: white" class=uzers>UZERS</div>
                 </div>
                 <div class=goback>
                     <div class=backtoprojects>Back to Projects</div>
                     <img class=arrow src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-arrow@2x.png">
                 </div>
-                <div class=topbar>
-                    <img class=topbar1 src=" https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-topbar.png">
-                    <img class=texture src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-texture.png">
-                    <img class=avatar src=" https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-avatar@2x.png">
-                    <div class=timesheets>Timesheets</div>
-                    <img class=activebg src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-active-bg@2x.png">
-                    <div class=projects>Projects</div>
-                    <div class=reports>Reports</div>
-                    <div class=invoices>Invoices</div>
-                    <div class=estimates>Estimates</div>
-                    <div class=manage>Manage</div>
-                    <div class=logo>
-                        <img class=fill1 src=" https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-fill-1%2010@2x.png">
-                        <img class=fill2 src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-fill-2%2011@2x.png">
-                        <img class=fill3 src="https://anima-uploads.s3.amazonaws.com/5b6f3e3e8d5c26000afe9049/5b6f3e87c0c39a000a9eb9a8/5b6f3e8982d3b3000ab46cba/img/kanbio---time-tracking-fill-3%201@2x.png">
-                        <div class=kanbio>Kanbio</div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
+    <script>
+        let data = [{
+                time: '8:40',
+                label: 'sitting',
+                value: 30
+            },
+            {
+                time: '9:00',
+                label: 'standing',
+                value: 5
+            },
+            {
+                time: '9:05',
+                label: 'sitting',
+                value: 145
+            },
+            {
+                time: '11:30',
+                label: 'standing',
+                value: 15
+            },
+            {
+                time: '11:45',
+                label: 'sitting',
+                value: 120
+            },
+            {
+                time: '13:45',
+                label: 'standing',
+                value: 60
+            },
+            {
+                time: '14:45',
+                label: 'sitting',
+                value: 4
+            },
+            {
+                time: '14:49',
+                label: 'standing',
+                value: 116
+            },
+            {
+                time: '16:45',
+                label: 'sitting',
+                value: 20
+            },
+            {
+                time: '17:05',
+                label: 'standing',
+                value: 100
+            }
+        ]
+        var ctx = document.getElementById("mainChart").getContext('2d');
+        let colors = [
+            '#19d',
+            '#a55',
+            '#b4d455',
+            '#456ACE'
+        ]
+        let labels = [...new Set(data.map(d => d.label))]
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: data.map(d => d.time),
+                datasets: [{
+                    label: 'sitting',
+                    data: data.map(d => {
+                        return {
+                            label: d.label,
+                            y: d.value
+                        }
+                    }),
+                    backgroundColor: data.map(d => colors[labels.indexOf(d.label)])
+                }]
+            },
+            options: {
+                tooltips: {
+                    callbacks: {
+                        title: function (tooltipItem, data) {
+                            return data['datasets'][0]['data'][tooltipItem[0].index].label;
+                        },
+                        label: function (tooltipItem, data) {
+                            return `for ${data['datasets'][0]['data'][tooltipItem['index']].y} min`;
+                        },
+                        afterLabel: function (tooltipItem, data) {
+                            return data['labels'][tooltipItem['index']];
+                        }
+                    },
+                    backgroundColor: '#FFF',
+                    titleFontSize: 16,
+                    titleFontColor: '#0066ff',
+                    bodyFontColor: '#000',
+                    bodyFontSize: 14,
+                    displayColors: false
+                },
+                legend: {
+                    display: false
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            },
+        })
+    </script>
 </body>
 
 </html>
