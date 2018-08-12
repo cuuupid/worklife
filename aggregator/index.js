@@ -1,5 +1,7 @@
 const express = require('express')
 const app = express()
+const cors = require('cors')
+app.use(cors())
 const mongoose = require('mongoose');
 const User = mongoose.model('User', new mongoose.Schema({
     name: String,
@@ -22,8 +24,8 @@ const User = mongoose.model('User', new mongoose.Schema({
 }))
 const crypto = require('crypto')
 
-app.use(express.json())
 app.use(function (req, res, next) {
+    console.log("GOT REQ")
     var oneof = false;
     if (req.headers.origin) {
         res.header('Access-Control-Allow-Origin', req.headers.origin);
@@ -48,11 +50,12 @@ app.use(function (req, res, next) {
         next();
     }
 })
+app.use(express.json())
 
 // FIXME: DON'T PUSH THIS TO GITHUB
 mongoose.connect('mongodb://ds119662.mlab.com:19662/worklive', {
-    user: // ha you thought
-    pass: // ha you thought
+    user: 'worklive',
+    pass: 'worklive123$'
 })
 mongoose.connection.on('error', e => console.error(e))
 
@@ -84,35 +87,38 @@ app.post('/login', (q, s) => {
 })
 
 app.get('/user/:key/mood', (q, s) => {
+    console.log("GOT REQ")
     User.findOne({
         secret: q.params.key
     }, (e, u) => {
         if (e) return s.sendStatus(418)
         if (!u) return s.sendStatus(403)
         if (u.moodData.length == 0) s.send([])
-        s.send(u.moodData.slice(Math.max(u.moodData.length - 11, 0), Math.max(u.moodData.length - 1, 0))
+        s.send(u.moodData.slice(Math.max(u.moodData.length - 11, 0), Math.max(u.moodData.length - 1, 0)))
     })
 })
 
 app.get('/user/:key/naps', (q, s) => {
+    console.log("GOT REQ")
     User.findOne({
         secret: q.params.key
     }, (e, u) => {
         if (e) return s.sendStatus(418)
         if (!u) return s.sendStatus(403)
         if (u.napData.length == 0) s.send([])
-        s.send(u.napData.slice(Math.max(u.napData.length - 11, 0), Math.max(u.napData.length - 1, 0))
+        s.send(u.napData.slice(Math.max(u.napData.length - 11, 0), Math.max(u.napData.length - 1, 0)))
     })
 })
 
 app.get('/user/:key/posture', (q, s) => {
+    console.log("GOT REQ")
     User.findOne({
         secret: q.params.key
     }, (e, u) => {
         if (e) return s.sendStatus(418)
         if (!u) return s.sendStatus(403)
         if (u.postureData.length == 0) s.send([])
-        s.send(u.postureData.slice(Math.max(u.postureData.length - 11, 0), Math.max(u.postureData.length - 1, 0))
+        s.send(u.postureData.slice(Math.max(u.postureData.length - 11, 0), Math.max(u.postureData.length - 1, 0)))
     })
 })
 
@@ -126,23 +132,24 @@ app.post('/data', (q, s) => {
         if (q.body.posture) {
             u.sitting = !u.sitting
             let now = new Date()
-            u.postureData.append({
+            u.postureData.push({
                 time: now.toString(), //now.toLocaleTimeString('en-us', {hour: 'numeric', minute: '2-digit'}),
                 label: u.sitting ? 'standing' : 'sitting',
-                value: ((now - u.postureData ? (new Date(u.postureData[u.postureData.length - 1].time)) : now) / (1000 * 60)).toFixed(0)
+                value: ((now - (u.postureData.length > 0 ? (new Date(u.postureData[u.postureData.length - 1].time)) : now)) / (1000 * 60)).toFixed(0)
             })
         }
         if (q.body.nap) {
             u.napping = !u.napping
             let now = new Date()
-            u.napData.append({
+            u.napData.push({
                 time: now.toString(), //now.toLocaleTimeString('en-us', {hour: 'numeric', minute: '2-digit'}),
                 label: u.napping ? 'awake' : 'napping',
-                value: ((now - u.napData ? (new Date(u.napData[u.napData.length - 1].time)) : now) / (1000 * 60)).toFixed(0)
+                value: ((now - (u.napData.length > 0 ? (new Date(u.napData[u.napData.length - 1].time)) : now)) / (1000 * 60)).toFixed(0)
             })
         }
         if (q.body.mood) {
-            u.moodData.append({
+            let now = new Date()
+            u.moodData.push({
                 time: now.toString(),
                 label: ['Saddest', 'Sad', 'Meh', 'Happy', 'Happiest'][q.body.mood],
                 value: q.body.mood
@@ -155,4 +162,4 @@ app.post('/data', (q, s) => {
     })
 })
 
-app.listen(6969)
+app.listen(80)
