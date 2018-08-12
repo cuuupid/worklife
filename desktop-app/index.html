@@ -1,0 +1,74 @@
+<html>
+
+<head>
+    <style>
+        .emoji {
+            font-size: 32pt;
+            margin-right: 25px;
+            opacity: 0.2;
+            text-decoration: none;
+        }
+
+        .emoji:hover,
+        .emoji:visited,
+        .emoji:focus,
+        .emoji:active {
+            opacity: 1.0;
+        }
+
+        .question {
+            font-size: 24pt;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white
+        }
+
+        .form-group {
+            padding-top: 10px;
+        }
+    </style>
+    <script>
+        var weatherRating = -1;
+        var stressRating = -1;
+        var feelRating = -1;
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+
+<body style="margin: 0">
+    <a onclick="remote.getCurrentWindow().close()" href="#" style="position:absolute; top: 7px; left: 13px; color: white; text-decoration: none; font-size: 18pt   ">✖</a>
+    <div style="background-color: #558793; width: 520px; height: 550px; text-align: center;">
+        <div class="form-group">
+            <p class="question">How's the weather today?</p>
+            <a onclick="weatherRating = 1; $('.weather').css('opacity', '0.2'); this.style.opacity = 1;" href="#" class="emoji weather">⛈️</a>
+            <a onclick="weatherRating = 2; $('.weather').css('opacity', '0.2'); this.style.opacity = 1;" href="#" class="emoji weather">😣</a>
+            <a onclick="weatherRating = 3; $('.weather').css('opacity', '0.2'); this.style.opacity = 1;" href="#" class="emoji weather">😕</a>
+            <a onclick="weatherRating = 4; $('.weather').css('opacity', '0.2'); this.style.opacity = 1;" href="#" class="emoji weather">🙃</a>
+            <a onclick="weatherRating = 5; $('.weather').css('opacity', '0.2'); this.style.opacity = 1;" href="#" class="emoji weather">🌞</a>
+        </div>
+        <div class="form-group">
+            <p class="question">How stressed do you feel?</p>
+            <a onclick="stressRating = 1; $('.stress').css('opacity', '0.2'); this.style.opacity = 1;" href="#" class="emoji stress">🤯</a>
+            <a onclick="stressRating = 2; $('.stress').css('opacity', '0.2'); this.style.opacity = 1;" href="#" class="emoji stress">😰</a>
+            <a onclick="stressRating = 3; $('.stress').css('opacity', '0.2'); this.style.opacity = 1;" href="#" class="emoji stress">😕</a>
+            <a onclick="stressRating = 4; $('.stress').css('opacity', '0.2'); this.style.opacity = 1;" href="#" class="emoji stress">🙂</a>
+            <a onclick="stressRating = 5; $('.stress').css('opacity', '0.2'); this.style.opacity = 1;" href="#" class="emoji stress">😁</a>
+        </div>
+        <div class="form-group">
+            <p class="question">How good do you feel today?</p>
+            <a onclick="feelRating = 1; $('.feel').css('opacity', '0.2'); this.style.opacity = 1;" href="#" class="emoji feel">😭</a>
+            <a onclick="feelRating = 2; $('.feel').css('opacity', '0.2'); this.style.opacity = 1;" href="#" class="emoji feel">😩</a>
+            <a onclick="feelRating = 3; $('.feel').css('opacity', '0.2'); this.style.opacity = 1;" href="#" class="emoji feel">😕</a>
+            <a onclick="feelRating = 4; $('.feel').css('opacity', '0.2'); this.style.opacity = 1;" href="#" class="emoji feel">😏</a>
+            <a onclick="feelRating = 5; $('.feel').css('opacity', '0.2'); this.style.opacity = 1;" href="#" class="emoji feel">🤩</a>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        var weatherRating = -1;
+        var stressRating = -1;
+        var feelRating = -1;
+        var remote = require('electron').remote
+    </script>
+</body>
+
+</html>
