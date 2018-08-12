@@ -248,111 +248,66 @@
         </div>
     </div>
     <script>
-        let data = [{
-                time: '8:40',
-                label: 'sitting',
-                value: 30
-            },
-            {
-                time: '9:00',
-                label: 'standing',
-                value: 5
-            },
-            {
-                time: '9:05',
-                label: 'sitting',
-                value: 145
-            },
-            {
-                time: '11:30',
-                label: 'standing',
-                value: 15
-            },
-            {
-                time: '11:45',
-                label: 'sitting',
-                value: 120
-            },
-            {
-                time: '13:45',
-                label: 'standing',
-                value: 60
-            },
-            {
-                time: '14:45',
-                label: 'sitting',
-                value: 4
-            },
-            {
-                time: '14:49',
-                label: 'standing',
-                value: 116
-            },
-            {
-                time: '16:45',
-                label: 'sitting',
-                value: 20
-            },
-            {
-                time: '17:05',
-                label: 'standing',
-                value: 100
-            }
-        ]
-        var ctx = document.getElementById("mainChart").getContext('2d');
-        let colors = [
-            '#558793',
-            '#a55',
-            '#b4d455',
-            '#456ACE'
-        ]
-        let labels = [...new Set(data.map(d => d.label))]
-        var myChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: data.map(d => d.time),
-                datasets: [{
-                    data: data.map(d => {
-                        return {
-                            label: d.label,
-                            y: d.value
-                        }
-                    }),
-                    backgroundColor: data.map(d => colors[labels.indexOf(d.label)])
-                }]
-            },
-            options: {
-                tooltips: {
-                    callbacks: {
-                        title: function (tooltipItem, data) {
-                            return data['datasets'][0]['data'][tooltipItem[0].index].label;
-                        },
-                        label: function (tooltipItem, data) {
-                            return `for ${data['datasets'][0]['data'][tooltipItem['index']].y} min`;
-                        },
-                        afterLabel: function (tooltipItem, data) {
-                            return data['labels'][tooltipItem['index']];
-                        }
-                    },
-                    backgroundColor: '#FFF',
-                    titleFontSize: 16,
-                    titleFontColor: "#558793",
-                    bodyFontColor: '#000',
-                    bodyFontSize: 14,
-                    displayColors: false
-                },
-                legend: {
-                    display: false
-                },
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
+        var posture = 1
+        var mood = 2
+        var nap = 3
+        async function makeChart(key) {
+            let data = await fetch('https')
+            var ctx = document.getElementById("mainChart").getContext('2d');
+            let colors = [
+                '#558793',
+                '#a55',
+                '#b4d455',
+                '#456ACE'
+            ]
+            let labels = [...new Set(data.map(d => d.label))]
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: data.map(d => d.time),
+                    datasets: [{
+                        data: data.map(d => {
+                            return {
+                                label: d.label,
+                                y: d.value
+                            }
+                        }),
+                        backgroundColor: data.map(d => colors[labels.indexOf(d.label)])
                     }]
-                }
-            },
-        })
+                },
+                options: {
+                    tooltips: {
+                        callbacks: {
+                            title: function (tooltipItem, data) {
+                                return data['datasets'][0]['data'][tooltipItem[0].index].label;
+                            },
+                            label: function (tooltipItem, data) {
+                                return `for ${data['datasets'][0]['data'][tooltipItem['index']].y} min`;
+                            },
+                            afterLabel: function (tooltipItem, data) {
+                                return data['labels'][tooltipItem['index']];
+                            }
+                        },
+                        backgroundColor: '#FFF',
+                        titleFontSize: 16,
+                        titleFontColor: "#558793",
+                        bodyFontColor: '#000',
+                        bodyFontSize: 14,
+                        displayColors: false
+                    },
+                    legend: {
+                        display: false
+                    },
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                },
+            })
+        }
     </script>
 </body>
 
